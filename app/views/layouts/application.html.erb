@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TweetApp</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+    <% if flash[:notice] %>
+      <div class="flash">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
+<!-- ローカルからのコードペーストは以下のbodyタグ範囲-->
+<body>
+	<div class="wrapper">
+	<!-- footerの重なりを下に置くために先にfooterを記述-->
+		<div class="footer">
+        	<div class="footer_main">
+				<img class="train" src="/train_png24.png">
+				<img class="moon" src="/moon_png24.png">                 
+                <div class="footer_menu">
+
+                            <%= link_to( "始発駅", "/", class: "stanp2" )%><br>
+                            <%= link_to( "投稿一覧", "/posts/index", class: "stanp2") %><br>
+                            <%= link_to( "新規投稿", "/posts/new", class: "stanp2") %><br>
+<!--                            <%= link_to( "ユーザ一覧", "/users/index", class: "stanp2") %><br>
+                            <%= link_to( "新規登録", "/signup", class: "stanp2") %><br>-->
+                            <%= link_to( "ご案内", "/about", class: "stanp2") %> 
+                </div>
+			</div>
+		</div>
+        
+        <!--container-->
+		<div class="container">
+        	<div class="main">
+        	    
+        	    
+				<div class="tweet">
+                <!-- index.html以外ここまで共有部分 -->
+                
+				 <%= yield %>
+
+                <!-- ここから共有部分 -->
+                </div><!-- tweet -->
+ 			</div><!-- main -->
+		</div><!-- container -->
+	</div><!-- wrapper -->
+
+<!-- <script src="js/jquery-3.3.1.slim.min.js"></script> 
+<script src="js/bootstrap.bundle.min.js"></script> -->
+</body>
+</html>

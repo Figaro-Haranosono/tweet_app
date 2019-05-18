@@ -1,0 +1,16 @@
+    <%= form_tag("/posts/create") do %>
+      <div class="form">
+          
+          <% @post.errors.full_messages.each do |message| %>
+            <div class="form-error">
+              <%= message %>
+            </div>
+          <% end %>
+          
+        <div class="form-body">
+          <textarea name="content" wrap autofocus><%= @post.content %></textarea>
+          <input type="submit" value="" id="post">
+        </div>
+      </div>
+    <!-- end を追加してください -->
+    <% end %>

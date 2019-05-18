@@ -1,0 +1,12 @@
+>rails console
+
+sqlite> tables
+テーブルの一覧を表示
+
+sqlite> .schema xxxxx
+xxxxxがテーブル名　テーブルの構造を確認
+
+sqlite> SELECT*FORM xxxxx;
+テーブルの内容を確認する
+
+sqlite> .quit

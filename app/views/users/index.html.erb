@@ -1,0 +1,7 @@
+<div class="index_tweet">
+    <% @users.each do |user| %>				    
+        <%= link_to("/users/#{user.id}") do %>
+            <p class="index_content"><%= user.name %></p>
+        <% end %>
+    <% end %>
+</div>

@@ -1,0 +1,7 @@
+<div class="show_tweet">
+	<p class="content"><%= @post.content %></p>
+	<p class="date"><%= @post.created_at %>
+    <%= link_to("/posts/#{@post.id}/edit") do %><img id="edit" src="/invisible_px.png"><% end %>
+    <%= link_to("/posts/#{@post.id}/destroy",{method: "post"}) do %><img id="delete" src="/invisible_px.png"><% end %>
+    </p>
+</div>

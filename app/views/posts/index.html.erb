@@ -1,0 +1,8 @@
+
+<div class="index_tweet">
+    <% @posts.each do |post| %>				    
+        <%= link_to("/posts/#{post.id}") do %>
+            <p class="index_content"><%= post.content %></p>
+        <% end %>
+    <% end %>
+</div>
